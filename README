@@ -1,0 +1,13 @@
+Build Instructions #*
+
+Dependency
+1. Boost
+2. Premake4
+
+Building on Linux
+
+premake4 gmake
+This will create a builds/ folder and fill it with makefiles.
+cd to builds/ folder and execute make commands.
+make // all targets
+In bin directory, redosgw-admin binary is created.
