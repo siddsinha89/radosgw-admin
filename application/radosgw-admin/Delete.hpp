@@ -6,10 +6,10 @@
 
 namespace basic
 {
-  class Remove : public oberon::Subcommand
+  class Delete : public oberon::Subcommand
   {
   public: // interface
-    Remove(oberon::OptionCollection sharedOptions) :
+    Delete(oberon::OptionCollection sharedOptions) :
       oberon::Subcommand("delete", "delete user with uuid from the provided string", sharedOptions)
     {
       /** **/

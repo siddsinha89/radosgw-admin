@@ -6,10 +6,10 @@
 
 namespace basic
 {
-  class Randomise : public oberon::Subcommand
+  class Create : public oberon::Subcommand
   {
   public: // interface
-    Randomise(oberon::OptionCollection sharedOptions) :
+    Create(oberon::OptionCollection sharedOptions) :
       oberon::Subcommand("create", "create a user from the provided string", sharedOptions)
     {
       /** **/

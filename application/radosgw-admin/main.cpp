@@ -23,20 +23,15 @@ namespace
 
 } // namespace
 
-/** NOTE: This example builds upon basic_1, if you don't understand some parts refer to the first part for clarification */
 
-//----------------------------------------------------------------------------------------------------------------------
 int main(int argc, char** argv)
 {
-  /** Now that we have more than one subcommand it makes sense to share the options that are duplicated between them.
-   *  The options are defined here and then referenced inside the subcommand if they are positional
-   */
   oberon::OptionCollection sharedOptions;
   sharedOptions.addArgOption<std::string>("uuid-String", "String for the uuid of the user", true);
 
   oberon::SubcommandCollection subcommands;
-  subcommands.add( "delete",    [=]() { return std::unique_ptr<basic::Remove>( new basic::Remove(sharedOptions) ); } );
-  subcommands.add( "create", [=]() { return std::unique_ptr<basic::Randomise>( new basic::Randomise(sharedOptions) ); } );
+  subcommands.add( "delete",    [=]() { return std::unique_ptr<basic::Delete>( new basic::Delete(sharedOptions) ); } );
+  subcommands.add( "create", [=]() { return std::unique_ptr<basic::Create>( new basic::Create(sharedOptions) ); } );
   subcommands.add( "info", [=]() { return std::unique_ptr<basic::Info>( new basic::Info(sharedOptions) ); } );
   subcommands.finaliseRegistrations();
 
